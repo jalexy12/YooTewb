@@ -1,0 +1,25 @@
+<form action="/videos" method="POST">
+
+  <div>
+	<label for="video-title">Title</label>
+	<br>
+	<input id="video-title" type="text" name="video[title]">
+  </div>
+
+  <div>	
+	<label for="video-url">URL</label>
+	<br>
+	<input id="video-url" type="text" name="video[url]">
+  </div>
+
+  <div>
+	<label for="video-description">Description</label>
+	<br>
+	<textarea id="video-description" type="text" name="video[description]"></textarea>
+	<br>
+  </div>
+  
+	<input type="hidden" name="authenticity_token" 
+	 value="<%= form_authenticity_token %>">
+	<button type="submit">Create Video</button>
+</form>

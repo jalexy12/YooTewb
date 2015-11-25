@@ -1,0 +1,10 @@
+<h1>Welcome to the videos index</h1>
+<%= link_to('Add New Video', new_video_path) %>
+
+<% @videos.each do | video | %>
+	<h4><%= link_to(video.title, video_path(video))%></h4>
+	<small><%= link_to('Delete Video', video_path(video), method: "DELETE", data: { confirm: "Are you sure?" }) %></small>
+	<!-- <a data-method="DELETE" href="/videos/<%= video.id %>">Delete Video</a> -->
+	<!-- <a href="/videos/<%= video.id %>/edit"><%= video.title %></a> -->
+	<video src="<%= video.url %>" controls></video>
+<% end %>

@@ -1,0 +1,16 @@
+<%= form_for @video do | f | %>
+	<%= f.label :title %>
+	<br>
+	<%= f.text_field :title  %>
+	<br>
+	<%= f.label :url %>
+	<br>
+	<%= f.text_field :url %>
+	<br>
+	<%= f.label :description %>
+	<br>
+	<%= f.text_area :description %>
+	<br>
+	<!-- <a href="/videos/new"><button>Go to the new video page</button></a> -->
+	<%= f.submit  %>
+<% end %>
