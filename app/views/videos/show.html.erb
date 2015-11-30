@@ -4,17 +4,15 @@
 	<%= @video.description %>
 </p>
 
-<form action="/videos/<%= @video.id %>/comments" method="POST">
+<form data-id="<%= @video.id %>" class="js-video-comment-form" action="/videos/<%= @video.id %>/comments" method="POST">
 	<label for="video-comment-author">Author</label>
 	<br>
 	<input type="text" id="video-comment-author" name="comment[author]">
-	<br>
+	<br>s
 	<label for="video-comment-content">Enter your comment</label>
 	<br>
 	<textarea rows="10" cols="40" type="text" id="video-comment-content" name="comment[content]"></textarea>
 	<br>
-	<input type="hidden" name="authenticity_token"
-	      value="<%= form_authenticity_token %>">
 	<button type="submit">Submit Comment</button>
 </form>
 

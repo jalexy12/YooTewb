@@ -3,9 +3,9 @@ class CommentsController < ApplicationController
 		@video = Video.find_by(id: params[:video_id])
 		@comment = @video.comments.new(comment_params)
 		if @comment.save
-			redirect_to "/videos/#{@video.id}"
+			render json: @comment
 		else
-			render 'videos/show'
+			# render 'videos/show'
 		end
 	end
 

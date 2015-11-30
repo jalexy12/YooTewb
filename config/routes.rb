@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :admins
+  devise_for :users
   get '/' => 'videos#index'
   # get '/videos/new' => 'videos#new'
   # post '/videos' => 'videos#create'
