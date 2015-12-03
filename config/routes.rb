@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  # post '/rate' => 'rater#create', :as => 'rate'
   devise_for :admins
   devise_for :users
   get '/' => 'videos#index'
@@ -10,7 +11,8 @@ Rails.application.routes.draw do
   # delete '/videos/:id' => 'videos#destroy'
   post '/videos/:video_id/comments' => 'comments#create'
   resources :videos 
-
+  get '/categories/:name' => 'categories#show_videos'
+  #   '/categories/technology' 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

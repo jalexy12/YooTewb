@@ -20,3 +20,8 @@ Video.create(url: "http://i.istockimg.com/video_passthrough/42009088/153/4200908
 Video.create(url: "http://i.istockimg.com/video_passthrough/64479789/153/64479789.mp4",
 			 title: "Summer",
 			 description: "Sweet video of some people sailing in the summer time.")
+
+Category.create(name: "Sports")
+Category.create(name: "Technology")
+Category.create(name: "Nature")
+Category.create(name: "Comedy")

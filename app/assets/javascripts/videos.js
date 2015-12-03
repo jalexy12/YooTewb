@@ -7,19 +7,31 @@ $(document).on("ready", function(){
 		var content = $('#video-comment-content').val();
 		var author = $('#video-comment-author').val();
 		var info = {
-			content: content,
-			author: author
+			comment: {
+				content: content,
+				author: author
+			}
 		}
+		//params: {comment: { content: "This is a comment", author: "Josh"} }
+
 		$.ajax({
 			type: "POST",
 			url: "/videos/" + id + "/comments",
-			success: function(){
-				console.log("It worked");
+			data: info,
+			success: function(response){
+						var commentHtml = '<li>\
+													<strong>' + response.author + ' 	says: </strong>\
+													<br>\
+													<p>' + response.content + '</p>\
+												 </li>' 
+						$('.comment-list').append(commentHtml)
+						var content = $('#video-comment-content').val("");
+						var author = $('#video-comment-author').val("");
+
 			},
 			error: function(){
 				console.log("It failed");
 			}
 		})
-		//params: {comment: { content: "This is a comment", author: "Josh"} }
 	})
 })

@@ -1,0 +1,9 @@
+<h1> Listing videos for <%= @category.name %> </h1>
+<ul>
+	<% @videos.each do | video | %>
+		<li>
+			<h4><%= video.title  %></h4>
+			<video src="<%= video.url %>" controls></video>
+		</li>
+	<% end %>
+</ul>
